@@ -4,7 +4,7 @@ import ReactGA from 'react-ga4';
 import App from './App.tsx';
 import './index.css';
 
-ReactGA.initialize('G-XXXXXXXXXX'); // ← ここにトラッキングIDを入れる
+ReactGA.initialize('G-39647BQS7L');
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
