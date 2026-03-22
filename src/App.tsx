@@ -239,7 +239,7 @@ function App() {
     return (
       <div className="min-h-screen bg-white flex flex-col items-center justify-between p-6">
         {/* ロゴ */}
-        <div className="w-full flex justify-center pt-8">
+        <div className="w-full flex justify-center pt-20">
           <img src="/wagmeal-logo.png" alt="WAGMEAL" className="w-40" />
         </div>
 
