@@ -345,7 +345,7 @@ function App() {
 
               {/* WAGMEALとは */}
               <div className="bg-stone-50 border border-stone-200 rounded-2xl p-4 mb-4">
-                <p className="text-sm font-bold text-wag mb-2">うちの子に本当に合うフードが<br />見つかる「WAGMEAL」</p>
+                <p className="text-sm font-bold text-wag mb-2">うちの子に本当に合うフードが<br />見つかる無料アプリ「WAGMEAL」</p>
                 <p className="text-stone-600 text-sm leading-relaxed mb-3">800種類以上のドッグフードを成分値・原材料で絞り込めるアプリです。フードの評価や食べた記録をつけてあとから振り返ったり、みんなが高く評価したフードをランキング形式で確認でき、あなたの愛犬に最適なドッグフード選びが可能になります。</p>
                 <p className="text-xs font-semibold text-stone-500">愛犬のタイプが分かった今、WAGMEALで最適なフードをデータで探してみましょう👇</p>
               </div>
