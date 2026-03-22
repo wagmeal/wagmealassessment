@@ -198,7 +198,7 @@ function App() {
       const dogType = calculateDogType(answers);
       setResult(dogType);
       setScreen('result');
-      ReactGA.event({ category: '診断', action: '結果表示', label: dogType.type });
+      ReactGA.event({ category: '診断', action: dogType.type, label: '結果表示' });
     }, 2500);
 
     return () => {
@@ -239,21 +239,40 @@ function App() {
     return (
       <div className="min-h-screen bg-white flex flex-col items-center justify-between p-6">
         {/* ロゴ */}
-        <div className="w-full flex justify-center pt-20">
-          <img src="/wagmeal-logo.png" alt="WAGMEAL" className="w-40" />
+        <div className="w-full flex flex-col items-center pt-16">
+          <img src="/wagmeal-logo.png" alt="WAGMEAL" className="w-24" />
+          <p className="text-xs font-bold text-wag tracking-widest uppercase mt-2">WAGMEAL 連動企画</p>
         </div>
 
         {/* メインコピー */}
-        <div className="text-center px-2">
-          <p className="text-sm font-bold text-wag tracking-widest uppercase mb-4">WAGMEAL 連動企画</p>
-          <h1 className="text-2xl font-bold text-stone-800 leading-snug mb-4">
-            口コミで評判のあのフード。<br />
-            うちの子にも<br />本当に合うのだろうか。
-          </h1>
-          <p className="text-stone-400 text-sm leading-relaxed">
-            5問で愛犬のごはんタイプを診断。<br />
-            あなたの愛犬にぴったりのごはんを知ろう！
-          </p>
+        <div className="w-full max-w-sm px-2">
+
+          {/* 雲の吹き出し（思考バブル） */}
+          <div className="relative mb-14 mt-2 px-2">
+            {/* 雲のボコボコ上部 */}
+            <div className="absolute -top-5 left-6 w-10 h-10 bg-wag-subtle rounded-full" />
+            <div className="absolute -top-8 left-16 w-14 h-14 bg-wag-subtle rounded-full" />
+            <div className="absolute -top-7 left-28 w-12 h-12 bg-wag-subtle rounded-full" />
+            <div className="absolute -top-5 right-10 w-10 h-10 bg-wag-subtle rounded-full" />
+            <div className="absolute -top-3 right-2 w-7 h-7 bg-wag-subtle rounded-full" />
+            {/* 雲の本体 */}
+            <div className="bg-wag-subtle rounded-3xl px-5 py-6 relative z-10">
+              <h1 className="text-xl font-bold text-stone-800 leading-snug text-center">
+                口コミで評判のあのフード。<br />
+                うちの子にも<br />本当に合うのだろうか。
+              </h1>
+            </div>
+            {/* 思考の泡（下） */}
+            <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-5 h-5 bg-wag-subtle rounded-full z-10" />
+            <div className="absolute -bottom-8 left-1/2 translate-x-1 w-3.5 h-3.5 bg-wag-subtle rounded-full z-10" />
+            <div className="absolute -bottom-12 left-1/2 translate-x-3 w-2 h-2 bg-wag-subtle rounded-full z-10" />
+          </div>
+
+          {/* 診断紹介 */}
+          <div className="text-center mt-4">
+            <p className="text-base font-bold text-stone-800 leading-snug mb-1">5問で愛犬のごはんタイプを診断。</p>
+            <p className="text-stone-400 text-sm">あなたの愛犬にぴったりのごはんを知ろう！</p>
+          </div>
         </div>
 
         {/* ボタン */}
