@@ -240,15 +240,15 @@ function App() {
       <div className="min-h-screen bg-white flex flex-col items-center justify-between p-6">
         {/* ロゴ */}
         <div className="w-full flex justify-center pt-8">
-          <img src="/wagmeal-logo.png" alt="WAGMEAL" className="w-28" />
+          <img src="/wagmeal-logo.png" alt="WAGMEAL" className="w-40" />
         </div>
 
         {/* メインコピー */}
         <div className="text-center px-2">
-          <p className="text-xs font-bold text-stone-400 tracking-widest uppercase mb-4">WAGMEAL 連動企画</p>
+          <p className="text-sm font-bold text-wag tracking-widest uppercase mb-4">WAGMEAL 連動企画</p>
           <h1 className="text-2xl font-bold text-stone-800 leading-snug mb-4">
             口コミで評判のあのフード。<br />
-            うちの子にも本当に合うのだろうか。
+            うちの子にも<br />本当に合うのだろうか。
           </h1>
           <p className="text-stone-400 text-sm leading-relaxed">
             5問で愛犬のごはんタイプを診断。<br />
@@ -339,21 +339,21 @@ function App() {
               {/* 解決方法 */}
               <div className="mb-5">
                 <p className="text-xs font-bold text-stone-400 mb-1">■ 解決方法</p>
-                <p className="text-stone-600 text-sm leading-relaxed mb-2">{result.solution}</p>
-                <p className="text-sm font-bold" style={{ color: themeColor }}>{result.solutionTag}</p>
+                <p className="text-sm font-bold mb-2" style={{ color: themeColor }}>{result.solutionTag}</p>
+                <p className="text-stone-600 text-sm leading-relaxed">{result.solution}</p>
+              </div>
+
+              {/* WAGMEALとは */}
+              <div className="bg-stone-50 border border-stone-200 rounded-2xl p-4 mb-4">
+                <p className="text-sm font-bold text-wag mb-2">うちの子に本当に合うフードが<br />見つかる「WAGMEAL」</p>
+                <p className="text-stone-600 text-sm leading-relaxed mb-3">800種類以上のドッグフードを成分値・原材料で絞り込めるアプリです。フードの評価や食べた記録をつけてあとから振り返ったり、みんなが高く評価したフードをランキング形式で確認でき、あなたの愛犬に最適なドッグフード選びが可能になります。</p>
+                <p className="text-xs font-semibold text-stone-500">愛犬のタイプが分かった今、WAGMEALで最適なフードをデータで探してみましょう👇</p>
               </div>
 
               {/* WAGMEAL活用術 */}
-              <div className="bg-stone-50 border border-stone-200 rounded-2xl p-4 mb-4">
-                <p className="text-xs font-bold text-wag mb-2">🔍 WAGMEAL 活用術</p>
+              <div className="rounded-2xl p-4 mb-6" style={{ backgroundColor: `${themeColor}15` }}>
+                <p className="text-xs font-bold mb-2" style={{ color: themeColor }}>🔍 {result.type}の活用術</p>
                 <p className="text-stone-600 text-sm leading-relaxed">{result.wagmealTip}</p>
-              </div>
-
-              {/* 共通ポイント */}
-              <div className="bg-stone-50 rounded-xl p-4 mb-6">
-                <p className="text-xs font-bold text-stone-400 mb-1">⚠️ 共通ポイント</p>
-                <p className="text-stone-400 text-xs leading-relaxed">フード選びはあくまで一つの要素であり、年齢・体質・運動量によって最適な選択は変わります。WAGMEALでのデータ検索は、その子に合うごはんを見つけるための最も強力なツールです。</p>
-                <p className="text-stone-400 text-xs mt-1">👉 WAGMEALでは、複数の条件を組み合わせて愛犬に合うフードを効率的に見つけることができます。</p>
               </div>
 
               {/* アプリ起動ボタン */}
