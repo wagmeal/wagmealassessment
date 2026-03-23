@@ -246,21 +246,21 @@ function App() {
     return (
       <div className="min-h-screen bg-white flex flex-col items-center justify-between p-6">
         {/* ロゴ */}
-        <div className="w-full flex flex-col items-center pt-16">
+        <div className="w-full flex flex-col items-center pt-8">
           <img src="/wagmeal-logo.png" alt="WAGMEAL" className="w-24" />
           <p className="text-xs font-bold text-wag tracking-widest uppercase mt-2">WAGMEAL 連動企画</p>
+
+          {/* 吹き出し */}
+          <div className="relative flex justify-center w-full max-w-sm px-4 mt-4">
+            <img src="/bubble-thought.png" alt="" className="w-full max-w-xs -scale-x-100" />
+            <div className="absolute inset-0 flex items-center justify-center px-12 pb-6">
+              <p className="text-stone-700 font-bold text-lg leading-relaxed text-center">口コミで評判のあのフード<br />うちの子にも本当に<br />合うのだろうか</p>
+            </div>
+          </div>
         </div>
 
         {/* メインコピー */}
         <div className="w-full max-w-sm px-4">
-
-          {/* 吹き出し */}
-          <div className="relative flex justify-center">
-            <img src="/bubble-thought.png" alt="" className="w-full max-w-xs -scale-x-100" />
-            <div className="absolute inset-0 flex items-center justify-center px-10 pb-6">
-              <p className="text-stone-700 font-bold text-base leading-relaxed text-center">口コミで評判のあのフード<br />うちの子にも本当に合うのだろうか</p>
-            </div>
-          </div>
 
           {/* 診断紹介 */}
           <div className="text-center mt-2">
