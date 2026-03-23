@@ -245,33 +245,17 @@ function App() {
         </div>
 
         {/* メインコピー */}
-        <div className="w-full max-w-sm px-2">
+        <div className="w-full max-w-sm px-4">
 
-          {/* 雲の吹き出し（思考バブル） */}
-          <div className="relative mb-14 mt-2 px-2">
-            {/* 雲のボコボコ上部 */}
-            <div className="absolute -top-5 left-6 w-10 h-10 bg-wag-subtle rounded-full" />
-            <div className="absolute -top-8 left-16 w-14 h-14 bg-wag-subtle rounded-full" />
-            <div className="absolute -top-7 left-28 w-12 h-12 bg-wag-subtle rounded-full" />
-            <div className="absolute -top-5 right-10 w-10 h-10 bg-wag-subtle rounded-full" />
-            <div className="absolute -top-3 right-2 w-7 h-7 bg-wag-subtle rounded-full" />
-            {/* 雲の本体 */}
-            <div className="bg-wag-subtle rounded-3xl px-5 py-6 relative z-10">
-              <h1 className="text-xl font-bold text-stone-800 leading-snug text-center">
-                口コミで評判のあのフード。<br />
-                うちの子にも<br />本当に合うのだろうか。
-              </h1>
-            </div>
-            {/* 思考の泡（下） */}
-            <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-5 h-5 bg-wag-subtle rounded-full z-10" />
-            <div className="absolute -bottom-8 left-1/2 translate-x-1 w-3.5 h-3.5 bg-wag-subtle rounded-full z-10" />
-            <div className="absolute -bottom-12 left-1/2 translate-x-3 w-2 h-2 bg-wag-subtle rounded-full z-10" />
+          {/* 女の子 ＋ 吹き出し（合成画像） */}
+          <div className="flex justify-center">
+            <img src="/girl-bubble.png" alt="考える女の子" className="w-full max-w-xs" />
           </div>
 
           {/* 診断紹介 */}
-          <div className="text-center mt-4">
-            <p className="text-base font-bold text-stone-800 leading-snug mb-1">5問で愛犬のごはんタイプを診断。</p>
-            <p className="text-stone-400 text-sm">あなたの愛犬にぴったりのごはんを知ろう！</p>
+          <div className="text-center mt-2">
+            <p className="text-lg font-bold text-stone-800 leading-snug mb-1">5問で愛犬のごはんタイプを診断。</p>
+            <p className="text-stone-500 text-sm font-medium">あなたの愛犬にぴったりのごはんを知ろう！</p>
           </div>
         </div>
 
@@ -292,18 +276,18 @@ function App() {
   // LOADING SCREEN
   if (screen === 'loading') {
     return (
-      <div className="min-h-screen bg-wag flex flex-col items-center justify-center gap-6 p-6">
+      <div className="min-h-screen bg-white flex flex-col items-center justify-center gap-6 p-6">
         <div className="text-7xl animate-bounce">🐾</div>
         <div className="text-center">
-          <p className="text-2xl font-bold text-white mb-1">
+          <p className="text-2xl font-bold text-stone-800 mb-1">
             愛犬のデータを分析中{loadingDots}
           </p>
-          <p className="text-white/60 text-sm">最適なごはんを探しています</p>
+          <p className="text-stone-400 text-sm">最適なごはんを探しています</p>
         </div>
         <div className="flex gap-2">
-          <div className="w-3 h-3 bg-white/60 rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />
-          <div className="w-3 h-3 bg-white/60 rounded-full animate-bounce" style={{ animationDelay: '150ms' }} />
-          <div className="w-3 h-3 bg-white/60 rounded-full animate-bounce" style={{ animationDelay: '300ms' }} />
+          <div className="w-3 h-3 bg-wag rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />
+          <div className="w-3 h-3 bg-wag rounded-full animate-bounce" style={{ animationDelay: '150ms' }} />
+          <div className="w-3 h-3 bg-wag rounded-full animate-bounce" style={{ animationDelay: '300ms' }} />
         </div>
       </div>
     );
@@ -406,15 +390,15 @@ function App() {
   const progress = ((currentStep + 1) / QUESTIONS.length) * 100;
 
   return (
-    <div className="min-h-screen bg-wag flex flex-col">
+    <div className="min-h-screen bg-white flex flex-col">
       {/* ヘッダー：進捗 */}
       <div className="px-6 pt-10 pb-6">
         <div className="flex items-center justify-between mb-3">
-          <p className="text-white/70 text-sm font-semibold">Q{currentStep + 1} / {QUESTIONS.length}</p>
+          <p className="text-stone-400 text-sm font-semibold">Q{currentStep + 1} / {QUESTIONS.length}</p>
           {currentStep > 0 && (
             <button
               onClick={() => { setCurrentStep(currentStep - 1); setSelectedAnswer(''); }}
-              className="text-white/60 hover:text-white flex items-center gap-1 text-sm transition-colors"
+              className="text-stone-400 hover:text-stone-600 flex items-center gap-1 text-sm transition-colors"
             >
               <ChevronLeft className="w-4 h-4" />
               もどる
@@ -422,9 +406,9 @@ function App() {
           )}
         </div>
         {/* プログレスバー */}
-        <div className="h-1.5 bg-white/20 rounded-full">
+        <div className="h-1.5 bg-stone-200 rounded-full">
           <div
-            className="h-full bg-white rounded-full transition-all duration-500"
+            className="h-full bg-wag rounded-full transition-all duration-500"
             style={{ width: `${progress}%` }}
           />
         </div>
