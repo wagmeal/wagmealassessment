@@ -99,6 +99,7 @@ const DOG_TYPES: Record<string, DogType> = {
     deepLinkParams: '?lipid_max=12.0',
     themeColor: '#C9A84C',
     image: '/type-stomach.png',
+    screenshots: ['/ss-stomach-1.png', '/ss-stomach-2.png'],
   },
   chubby: {
     type: 'ぽっちゃり注意タイプ',
@@ -111,6 +112,7 @@ const DOG_TYPES: Record<string, DogType> = {
     deepLinkParams: '?energy_max=330&lipid_max=8.0',
     themeColor: '#C47A3A',
     image: '/type-chubby.png',
+    screenshots: ['/ss-chubby-1.png', '/ss-chubby-2.png'],
   },
   gourmet: {
     type: 'グルメ王子タイプ',
@@ -123,6 +125,7 @@ const DOG_TYPES: Record<string, DogType> = {
     deepLinkParams: '?exclude=chicken,beef&include=venison,fish',
     themeColor: '#8B1A2A',
     image: '/type-gourmet.png',
+    screenshots: ['/ss-gourmet-1.png', '/ss-gourmet-2.png'],
   },
   athlete: {
     type: 'わんぱくスポーツ犬タイプ',
@@ -135,6 +138,7 @@ const DOG_TYPES: Record<string, DogType> = {
     deepLinkParams: '?protein_min=28.0',
     themeColor: '#6AABBB',
     image: '/type-athlete.png',
+    screenshots: ['/ss-athlete-1.png', '/ss-athlete-2.png'],
   },
   balanced: {
     type: 'バランス優等生タイプ',
@@ -147,6 +151,7 @@ const DOG_TYPES: Record<string, DogType> = {
     deepLinkParams: '?ash_max=8.0&fiber_min=3.0&fiber_max=5.0',
     themeColor: '#6A9A72',
     image: '/type-balanced.png',
+    screenshots: ['/ss-balanced-1.png', '/ss-balanced-2.png'],
   },
 };
 
@@ -249,9 +254,12 @@ function App() {
         {/* メインコピー */}
         <div className="w-full max-w-sm px-4">
 
-          {/* 女の子 ＋ 吹き出し（合成画像） */}
-          <div className="flex justify-center">
-            <img src="/girl-bubble.png" alt="考える女の子" className="w-full max-w-xs" />
+          {/* 吹き出し */}
+          <div className="relative flex justify-center">
+            <img src="/bubble-thought.png" alt="" className="w-full max-w-xs -scale-x-100" />
+            <div className="absolute inset-0 flex items-center justify-center px-10 pb-6">
+              <p className="text-stone-700 font-bold text-base leading-relaxed text-center">口コミで評判のあのフード<br />うちの子にも本当に合うのだろうか</p>
+            </div>
           </div>
 
           {/* 診断紹介 */}
@@ -381,6 +389,26 @@ function App() {
                 WAGMEALで今すぐ検索
                 <ChevronRight className="w-5 h-5" />
               </a>
+
+              {/* 注意点セクション */}
+              <div className="px-1 mb-3 text-left">
+                <p className="text-[10px] font-semibold text-stone-400 mb-1.5">⚠️ フード変更に関する注意点（必ずお読みください）</p>
+                <p className="text-[10px] text-stone-400 leading-relaxed mb-1.5">愛犬の健康と安全のために、新しいフードへ切り替える前に、以下の点について必ずご確認ください。</p>
+                <div className="space-y-1.5">
+                  <div>
+                    <p className="text-[10px] font-semibold text-stone-400 mb-0.5">1. 病気治療中・処方食を使用中の場合</p>
+                    <p className="text-[10px] text-stone-400 leading-relaxed">愛犬が現在病気の治療中である、または獣医師の指示により処方食（療法食）を食べている場合は、この診断結果に関わらず、独自の判断でフードを変更しないでください。新しいフードを与える前に、必ずかかりつけの獣医師にご相談ください。</p>
+                  </div>
+                  <div>
+                    <p className="text-[10px] font-semibold text-stone-400 mb-0.5">2. 特に注意が必要なケース</p>
+                    <p className="text-[10px] text-stone-400 leading-relaxed">慢性的な皮膚の痒み、下痢・軟便、急激な体重増加などが見られる場合、それは単なる体質ではなく、食物アレルギーや胃腸疾患、代謝性疾患などの病気が原因である可能性があります。フードを選ぶ前に、まずは獣医師の診察を受け、病気の可能性を除外した上で、推奨される食事内容について相談することを強く推奨します。</p>
+                  </div>
+                  <div>
+                    <p className="text-[10px] font-semibold text-stone-400 mb-0.5">3. この診断について</p>
+                    <p className="text-[10px] text-stone-400 leading-relaxed">この性格診断は、一般的な栄養学と傾向に基づくものであり、医療的な診断を代替するものではありません。</p>
+                  </div>
+                </div>
+              </div>
 
               <button
                 onClick={handleReset}
