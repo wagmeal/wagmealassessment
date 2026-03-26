@@ -248,14 +248,18 @@ function App() {
         {/* ロゴ */}
         <div className="w-full flex flex-col items-center pt-8">
           <img src="/wagmeal-logo.png" alt="WAGMEAL" className="w-24" />
-          <p className="text-xs font-bold text-wag tracking-widest uppercase mt-2">WAGMEAL 連動企画</p>
 
-          {/* 吹き出し */}
-          <div className="relative flex justify-center w-full max-w-sm px-4 mt-4">
-            <img src="/bubble-thought.png" alt="" className="w-full max-w-xs -scale-x-100" />
-            <div className="absolute inset-0 flex items-center justify-center px-12 pb-6">
-              <p className="text-stone-700 font-bold text-lg leading-relaxed text-center">口コミで評判のあのフード<br />うちの子にも本当に<br />合うのだろうか</p>
-            </div>
+          {/* 口コミテキスト */}
+          <p className="text-stone-700 font-bold text-lg leading-relaxed text-center mt-5 px-4">口コミで評判のあのフード、<br />うちの子にも本当に合うのだろうか</p>
+
+          {/* 結果タイプ画像 */}
+          <div className="grid grid-cols-3 gap-3 mt-6 px-4">
+            <img src="/type-delicate.png" alt="" className="w-20 h-20 rounded-full object-cover mx-auto" />
+            <img src="/type-stomach.png" alt="" className="w-20 h-20 rounded-full object-cover mx-auto" />
+            <img src="/type-chubby.png" alt="" className="w-20 h-20 rounded-full object-cover mx-auto" />
+            <img src="/type-gourmet.png" alt="" className="w-20 h-20 rounded-full object-cover mx-auto" />
+            <img src="/type-athlete.png" alt="" className="w-20 h-20 rounded-full object-cover mx-auto" />
+            <img src="/type-balanced.png" alt="" className="w-20 h-20 rounded-full object-cover mx-auto" />
           </div>
         </div>
 
