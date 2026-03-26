@@ -128,7 +128,7 @@ const DOG_TYPES: Record<string, DogType> = {
     screenshots: ['/ss-gourmet-1.png', '/ss-gourmet-2.png'],
   },
   athlete: {
-    type: 'わんぱくスポーツ犬タイプ',
+    type: 'わんぱくスポーツタイプ',
     emoji: '🏃',
     concerns: '運動量が多く栄養が足りているか不安／痩せ気味',
     detail: 'お散歩から帰ってきたのに、まだおもちゃを加えて待っている…。そのスタミナ、分けて欲しくないですか？とにかく元気いっぱいで、エネルギー消費が激しいタイプ。家の中で家具を噛んだりしてエネルギーを爆発させてしまうことも。しっかり食べているのに、太らずに引き締まった体を維持している、まさにアスリートです。',
@@ -253,13 +253,13 @@ function App() {
           <p className="text-stone-700 font-bold text-lg leading-relaxed text-center mt-5 px-4">口コミで評判のあのフード、<br />うちの子にも本当に合うのだろうか</p>
 
           {/* 結果タイプ画像 */}
-          <div className="grid grid-cols-3 gap-3 mt-6 px-4">
-            <img src="/type-delicate.png" alt="" className="w-20 h-20 rounded-full object-cover mx-auto" />
-            <img src="/type-stomach.png" alt="" className="w-20 h-20 rounded-full object-cover mx-auto" />
-            <img src="/type-chubby.png" alt="" className="w-20 h-20 rounded-full object-cover mx-auto" />
-            <img src="/type-gourmet.png" alt="" className="w-20 h-20 rounded-full object-cover mx-auto" />
-            <img src="/type-athlete.png" alt="" className="w-20 h-20 rounded-full object-cover mx-auto" />
-            <img src="/type-balanced.png" alt="" className="w-20 h-20 rounded-full object-cover mx-auto" />
+          <div className="grid grid-cols-3 gap-x-6 gap-y-6 mt-6 px-4">
+            <img src="/type-delicate.png" alt="" className="w-24 h-24 rounded-full object-cover mx-auto" />
+            <img src="/type-stomach.png" alt="" className="w-24 h-24 rounded-full object-cover mx-auto" />
+            <img src="/type-chubby.png" alt="" className="w-24 h-24 rounded-full object-cover mx-auto" />
+            <img src="/type-gourmet.png" alt="" className="w-24 h-24 rounded-full object-cover mx-auto" />
+            <img src="/type-athlete.png" alt="" className="w-24 h-24 rounded-full object-cover mx-auto" />
+            <img src="/type-balanced.png" alt="" className="w-24 h-24 rounded-full object-cover mx-auto" />
           </div>
         </div>
 
