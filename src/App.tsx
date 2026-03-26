@@ -254,12 +254,12 @@ function App() {
 
           {/* 結果タイプ画像 */}
           <div className="grid grid-cols-3 gap-x-6 gap-y-6 mt-6 px-4">
-            <img src="/type-delicate.png" alt="" className="w-24 h-24 rounded-full object-cover mx-auto" />
-            <img src="/type-stomach.png" alt="" className="w-24 h-24 rounded-full object-cover mx-auto" />
-            <img src="/type-chubby.png" alt="" className="w-24 h-24 rounded-full object-cover mx-auto" />
-            <img src="/type-gourmet.png" alt="" className="w-24 h-24 rounded-full object-cover mx-auto" />
-            <img src="/type-athlete.png" alt="" className="w-24 h-24 rounded-full object-cover mx-auto" />
-            <img src="/type-balanced.png" alt="" className="w-24 h-24 rounded-full object-cover mx-auto" />
+            <img src="/type-delicate.png" alt="" className="w-20 h-20 rounded-full object-cover mx-auto" />
+            <img src="/type-stomach.png" alt="" className="w-20 h-20 rounded-full object-cover mx-auto" />
+            <img src="/type-chubby.png" alt="" className="w-20 h-20 rounded-full object-cover mx-auto" />
+            <img src="/type-gourmet.png" alt="" className="w-20 h-20 rounded-full object-cover mx-auto" />
+            <img src="/type-athlete.png" alt="" className="w-20 h-20 rounded-full object-cover mx-auto" />
+            <img src="/type-balanced.png" alt="" className="w-20 h-20 rounded-full object-cover mx-auto" />
           </div>
         </div>
 
