@@ -119,9 +119,9 @@ const DOG_TYPES: Record<string, DogType> = {
     emoji: '👑',
     concerns: 'すぐ飽きる／食べムラがある／トッピング必須',
     detail: '「トッピングがないと食べない」そんな小さなわがままに、毎日降参していませんか？味や匂いに非常に敏感で、自分の好みがはっきりしている小さな貴族です。昨日は食べたのに今日は急にプイッ…。愛犬がごはんを残すたび、「何か病気？」と心配になり、結局また別のトッピングを探してしまう…。そんな飼い主さんを悩ませるタイプです。',
-    solution: '犬は本来、毎日同じものを食べ続けるよりも、様々な匂いや味を楽しむことを好む傾向があります。特にこのタイプの愛犬は同じフードが続くと飽きてしまいがちなため、2〜3種類の異なるフードを定期的に切り替える「フードローテーション」が食欲維持の鍵となります。例えば、「鶏肉メイン」→「お魚メイン」→「鹿肉メイン」のように、ベースとなるタンパク源を計画的に変えていくことで、「今日は何かな？」という新鮮な喜びを与え続けながら、栄養の偏りも防ぐことができます。',
+    solution: '犬は本来、毎日同じものを食べ続けるよりも、様々な匂いや味を楽しむことを好む傾向があります。特にこのタイプの愛犬は同じフードが続くと飽きてしまいがちなため、2〜3種類の異なるフードを定期的に切り替える「フードローテーション」が食欲維持の鍵となります。例えば、「鶏肉メイン」→「お魚メイン」→「ラム肉メイン」のように、ベースとなるタンパク源を計画的に変えていくことで、「今日は何かな？」という新鮮な喜びを与え続けながら、栄養の偏りも防ぐことができます。',
     solutionTag: '「フードローテーション」で叶える、飽きない食卓',
-    wagmealTip: 'WAGMEALは、愛犬専用のローテーションメニューを作るのに最適なツールです。まずは原材料フィルターで、「魚」や「ラム肉」「鹿肉」など、普段食べていないタンパク源を【含む】設定にして、新しいお気に入り候補を探してみましょう。\nさらに、WAGMEALの「食べた記録」機能を活用すれば、「前はどのお肉の時に食いつきが良かったっけ？」と振り返るのも簡単です。愛犬の好みの傾向をデータでしっかり把握し、毎日のごはんタイムが待ち遠しくなる最強のローテーションを組み立てましょう！',
+    wagmealTip: 'WAGMEALは、愛犬専用のローテーションメニューを作るのに最適なツールです。まずは原材料フィルターで、「魚」や「ラム肉」など、普段食べていないタンパク源を【含む】設定にして、新しいお気に入り候補を探してみましょう。\nさらに、WAGMEALの「食べた記録」機能を活用すれば、「前はどのお肉の時に食いつきが良かったっけ？」と振り返るのも簡単です。愛犬の好みの傾向をデータでしっかり把握し、毎日のごはんタイムが待ち遠しくなる最強のローテーションを組み立てましょう！',
     deepLinkParams: '?exclude=chicken,beef&include=venison,fish',
     themeColor: '#8B1A2A',
     image: '/type-gourmet.png',
@@ -216,6 +216,7 @@ function App() {
 
   const handleSelect = (value: string) => {
     setSelectedAnswer(value);
+    ReactGA.event({ category: '診断', action: `q${currentStep + 1}_answer`, label: value });
   };
 
   const handleNext = () => {
@@ -276,7 +277,7 @@ function App() {
         {/* ボタン */}
         <div className="w-full max-w-sm pb-8">
           <button
-            onClick={() => setScreen('quiz')}
+            onClick={() => { ReactGA.event({ category: '診断', action: 'start_click', label: 'トップ' }); setScreen('quiz'); }}
             className="w-full bg-wag text-white py-5 rounded-2xl font-bold text-lg hover:bg-wag-dark transition-all shadow-lg flex items-center justify-center gap-2"
           >
             無料で診断スタート
@@ -387,6 +388,7 @@ function App() {
                 href="https://apps.apple.com/jp/app/wagmeal/id6756182934"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => ReactGA.event({ category: 'CTA', action: 'appstore_click', label: result?.type ?? '' })}
                 className="w-full text-white py-4 rounded-2xl font-bold text-base transition-all transform hover:scale-105 shadow-md flex items-center justify-center gap-2 mb-3"
                 style={{ backgroundColor: themeColor }}
               >
